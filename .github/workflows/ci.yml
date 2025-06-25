@@ -1,0 +1,266 @@
+name: Continuous Integration
+
+# Trigger the workflow on push and pull requests to main branch
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+# Set permissions for the workflow
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  # Markdown Linting Job
+  markdown-lint:
+    name: Markdown Lint
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          # Fetch full history for better context
+          fetch-depth: 0
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      
+      - name: Install markdownlint-cli2
+        run: npm install -g markdownlint-cli2
+      
+      - name: Run markdown lint
+        run: markdownlint-cli2 "**/*.md" "#node_modules"
+        continue-on-error: false
+
+  # Content Quality Check Job
+  content-quality:
+    name: Content Quality Validation
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Check for CREATE Framework compliance
+        run: |
+          echo "Checking for CREATE Framework compliance in prompt templates..."
+          
+          # Check if prompt templates follow CREATE structure
+          for file in $(find . -name "*.prompt.md" -o -name "*template*.md"); do
+            if [ -f "$file" ]; then
+              echo "Checking: $file"
+              
+              # Check for required CREATE sections
+              sections=("Character" "Request" "Examples" "Adjustments" "Type")
+              missing_sections=()
+              
+              for section in "${sections[@]}"; do
+                if ! grep -q "## $section" "$file" && ! grep -q "# $section" "$file"; then
+                  missing_sections+=("$section")
+                fi
+              done
+              
+              if [ ${#missing_sections[@]} -gt 0 ]; then
+                echo "⚠️  $file is missing CREATE Framework sections: ${missing_sections[*]}"
+                echo "CREATE_COMPLIANCE_ISSUES=true" >> $GITHUB_ENV
+              else
+                echo "✅ $file follows CREATE Framework structure"
+              fi
+            fi
+          done
+      
+      - name: Check for Quality Pyramid principles
+        run: |
+          echo "Checking documentation for Quality Pyramid principles..."
+          
+          # Look for educational content quality markers
+          for file in $(find ./education -name "*.md" 2>/dev/null || true); do
+            if [ -f "$file" ]; then
+              echo "Checking educational content: $file"
+              
+              # Check for learning objectives
+              if ! grep -q -i "learning objective\|outcome\|goal" "$file"; then
+                echo "⚠️  $file may be missing clear learning objectives"
+              fi
+              
+              # Check for practical examples
+              if ! grep -q -i "example\|demonstration\|exercise" "$file"; then
+                echo "⚠️  $file may be missing practical examples"
+              fi
+            fi
+          done
+
+  # Link Validation Job
+  link-check:
+    name: Link Validation
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install markdown-link-check
+        run: npm install -g markdown-link-check
+      
+      - name: Check links in markdown files
+        run: |
+          # Create config file for link checking
+          cat > .markdown-link-check.json << 'EOF'
+          {
+            "ignorePatterns": [
+              {
+                "pattern": "^http://localhost"
+              },
+              {
+                "pattern": "^https://localhost"
+              }
+            ],
+            "timeout": "20s",
+            "retryOn429": true,
+            "retryCount": 3,
+            "fallbackHTTPStatus": [400, 401, 403, 404, 500, 502, 503, 504]
+          }
+          EOF
+          
+          # Check all markdown files for broken links
+          find . -name "*.md" -not -path "./node_modules/*" -exec markdown-link-check {} \;
+
+  # File Structure Validation
+  structure-check:
+    name: Repository Structure Validation
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Validate repository structure
+        run: |
+          echo "Validating prompt-craft repository structure..."
+          
+          # Define expected directories
+          expected_dirs=(
+            "methodology"
+            "workflows" 
+            "templates"
+            "education"
+            "reference"
+            "tools"
+            "research"
+          )
+          
+          # Check if core directories exist
+          for dir in "${expected_dirs[@]}"; do
+            if [ -d "$dir" ]; then
+              echo "✅ Found required directory: $dir"
+            else
+              echo "⚠️  Missing expected directory: $dir"
+            fi
+          done
+          
+          # Check for key files
+          key_files=("README.md" "METHODOLOGY.md" "CONTRIBUTING.md")
+          for file in "${key_files[@]}"; do
+            if [ -f "$file" ]; then
+              echo "✅ Found required file: $file"
+            else
+              echo "⚠️  Missing expected file: $file"
+            fi
+          done
+
+  # Template Validation Job
+  template-validation:
+    name: Template Validation
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Validate prompt templates
+        run: |
+          echo "Validating prompt templates for systematic methodology compliance..."
+          
+          # Find all template files
+          template_files=$(find . -name "*template*.md" -o -name "*.prompt.md" 2>/dev/null || true)
+          
+          if [ -z "$template_files" ]; then
+            echo "No template files found to validate"
+            exit 0
+          fi
+          
+          for template in $template_files; do
+            echo "Validating template: $template"
+            
+            # Check for systematic structure
+            if grep -q "CREATE\|Character\|Request\|Examples" "$template"; then
+              echo "✅ $template appears to follow systematic methodology"
+            else
+              echo "⚠️  $template may not follow CREATE Framework structure"
+            fi
+            
+            # Check for quality indicators
+            if grep -q -i "quality\|validation\|test" "$template"; then
+              echo "✅ $template includes quality considerations"
+            else
+              echo "ℹ️  Consider adding quality validation guidance to $template"
+            fi
+          done
+
+# Summary job that depends on all others
+  ci-summary:
+    name: CI Summary
+    runs-on: ubuntu-latest
+    needs: [markdown-lint, content-quality, link-check, structure-check, template-validation]
+    if: always()
+    
+    steps:
+      - name: CI Results Summary
+        run: |
+          echo "## Continuous Integration Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          # Check job results
+          if [ "${{ needs.markdown-lint.result }}" = "success" ]; then
+            echo "✅ Markdown Linting: Passed" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ Markdown Linting: Failed" >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          if [ "${{ needs.content-quality.result }}" = "success" ]; then
+            echo "✅ Content Quality: Passed" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ Content Quality: Failed" >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          if [ "${{ needs.link-check.result }}" = "success" ]; then
+            echo "✅ Link Validation: Passed" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ Link Validation: Failed" >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          if [ "${{ needs.structure-check.result }}" = "success" ]; then
+            echo "✅ Structure Validation: Passed" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ Structure Validation: Failed" >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          if [ "${{ needs.template-validation.result }}" = "success" ]; then
+            echo "✅ Template Validation: Passed" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ Template Validation: Failed" >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "This CI workflow ensures systematic methodology compliance and quality standards for the prompt-craft repository." >> $GITHUB_STEP_SUMMARY
