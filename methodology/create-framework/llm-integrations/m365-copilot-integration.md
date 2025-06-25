@@ -315,14 +315,6 @@ EXTRAS:
 - [Microsoft 365 Admin Center](https://admin.microsoft.com/) - Administrative setup and management
 - [Copilot Adoption Kit](https://adoption.microsoft.com/copilot/) - Implementation and adoption resources
 
-**Application-Specific Guides:**
-
-- [Copilot in Word](https://support.microsoft.com/office/copilot-in-word) - Document creation and enhancement features
-- [Copilot in Excel](https://support.microsoft.com/office/copilot-in-excel) - Data analysis and formula assistance
-- [Copilot in PowerPoint](https://support.microsoft.com/office/copilot-in-powerpoint) - Presentation creation and design
-- [Copilot in Outlook](https://support.microsoft.com/office/copilot-in-outlook) - Email and calendar optimization
-- [Copilot in Teams](https://support.microsoft.com/office/copilot-in-teams) - Meeting and collaboration enhancement
-
 **Best Practices and Training:**
 
 - [Craft Effective Prompts for Copilot](https://learn.microsoft.com/en-us/training/paths/craft-effective-prompts-copilot-microsoft-365/) -
