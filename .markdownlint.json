@@ -8,16 +8,20 @@
     "indent": 2
   },
   "MD013": {
-    "line_length": 120,
-    "heading_line_length": 120,
-    "code_block_line_length": 120,
+    "line_length": 140,
+    "heading_line_length": 140,
+    "code_block_line_length": 140,
     "tables": false
   },
   "MD024": {
     "siblings_only": true
   },
+  "MD025": false,
   "MD026": {
     "punctuation": ".,;:!"
+  },
+  "MD029": {
+    "style": "ordered"
   },
   "MD033": {
     "allowed_elements": [
@@ -30,6 +34,7 @@
       "mark"
     ]
   },
+  "MD036": false,
   "MD041": false,
   "MD046": {
     "style": "fenced"
@@ -38,7 +43,7 @@
     "style": "backtick"
   },
   "MD049": {
-    "style": "underscore"
+    "style": "asterisk"
   },
   "MD050": {
     "style": "asterisk"

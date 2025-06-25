@@ -1,6 +1,7 @@
 # Contributing to Prompt Craft
 
-Thank you for your interest in contributing to Prompt Craft! This repository thrives on community contributions that help expand our collection of prompt engineering techniques and AI-assisted development workflows.
+Thank you for your interest in contributing to Prompt Craft! This repository thrives on community contributions
+that help expand our collection of prompt engineering techniques and AI-assisted development workflows.
 
 ## 🌟 Ways to Contribute
 
@@ -121,7 +122,7 @@ git commit -m "Docs: Improve clarity in prompt structure section"
 
 ### Commit Message Format
 
-```
+```text
 Type: Brief description
 
 Optional longer description if needed.

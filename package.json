@@ -1,0 +1,60 @@
+{
+  "name": "prompt-craft",
+  "version": "1.0.0",
+  "description": "Systematic prompt engineering methodology for AI adoption",
+  "main": "index.js",
+  "scripts": {
+    "lint": "markdownlint-cli2 \"**/*.md\" \"#node_modules\"",
+    "lint:fix": "markdownlint-cli2 \"**/*.md\" \"#node_modules\" --fix",
+    "link-check": "find . -name \"*.md\" -not -path \"./node_modules/*\" -exec markdown-link-check {} \\;",
+    "link-check:win": "for /r %i in (*.md) do @if not \"%~pi\"==\"%cd%\\node_modules\\\" markdown-link-check \"%i\"",
+    "validate": "node scripts/validate.js",
+    "validate:lint": "npm run lint",
+    "validate:full": "npm run lint && npm run link-check",
+    "test": "npm run validate",
+    "setup": "npm install",
+    "ci": "npm run validate",
+    "pretest": "npm run setup"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sharathsatish/prompt-craft.git"
+  },
+  "keywords": [
+    "prompt-engineering",
+    "ai",
+    "systematic-methodology",
+    "create-framework",
+    "quality-pyramid",
+    "enterprise",
+    "documentation",
+    "education"
+  ],
+  "author": "Prompt Engineering Team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sharathsatish/prompt-craft/issues"
+  },
+  "homepage": "https://github.com/sharathsatish/prompt-craft#readme",
+  "devDependencies": {
+    "markdownlint-cli2": "^0.13.0",
+    "markdown-link-check": "^3.12.2"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "files": [
+    "methodology/**/*",
+    "workflows/**/*",
+    "templates/**/*",
+    "education/**/*",
+    "reference/**/*",
+    "tools/**/*",
+    "research/**/*",
+    "README.md",
+    "METHODOLOGY.md",
+    "CONTRIBUTING.md",
+    "LICENSE"
+  ]
+}

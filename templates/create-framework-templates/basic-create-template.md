@@ -4,7 +4,9 @@
 
 ## Template Overview
 
-This basic CREATE template provides the foundational pattern for systematic prompt construction using all six CREATE Framework elements. It serves as a starting point for enterprise teams beginning their AI integration journey while ensuring consistent quality and professional standards.
+This basic CREATE template provides the foundational pattern for systematic prompt construction using all six
+CREATE Framework elements. It serves as a starting point for enterprise teams beginning their AI integration
+journey while ensuring consistent quality and professional standards.
 
 ## Template Structure
 
@@ -27,6 +29,7 @@ You are a [ROLE_TITLE] with [EXPERIENCE_LEVEL] years of experience in [DOMAIN_EX
 ```
 
 **Customization Guidelines:**
+
 - Replace bracketed placeholders with specific role requirements
 - Ensure expertise aligns with intended use case and organizational context
 - Maintain professional tone appropriate for enterprise environment
@@ -54,6 +57,7 @@ You are a [ROLE_TITLE] with [EXPERIENCE_LEVEL] years of experience in [DOMAIN_EX
 ```
 
 **Customization Guidelines:**
+
 - Define clear, actionable tasks with specific outcomes
 - Include measurable success criteria and quality standards
 - Provide sufficient business context for informed AI responses
@@ -78,6 +82,7 @@ You are a [ROLE_TITLE] with [EXPERIENCE_LEVEL] years of experience in [DOMAIN_EX
 ```
 
 **Customization Guidelines:**
+
 - Provide concrete examples that demonstrate desired output quality
 - Include edge cases and challenging scenarios with appropriate handling
 - Show specific formatting, structure, and content expectations
@@ -103,6 +108,7 @@ You are a [ROLE_TITLE] with [EXPERIENCE_LEVEL] years of experience in [DOMAIN_EX
 ```
 
 **Customization Guidelines:**
+
 - Include all relevant organizational constraints and requirements
 - Specify compliance requirements and governance considerations
 - Define clear quality standards and validation processes
@@ -130,6 +136,7 @@ You are a [ROLE_TITLE] with [EXPERIENCE_LEVEL] years of experience in [DOMAIN_EX
 ```
 
 **Customization Guidelines:**
+
 - Specify exact format requirements for downstream process compatibility
 - Define clear structure that supports business objectives
 - Include formatting standards that meet organizational requirements
@@ -155,6 +162,7 @@ You are a [ROLE_TITLE] with [EXPERIENCE_LEVEL] years of experience in [DOMAIN_EX
 ```
 
 **Customization Guidelines:**
+
 - Provide comprehensive context that enhances AI understanding
 - Include organizational factors that influence appropriate responses
 - Specify quality assurance requirements and improvement approaches
@@ -209,12 +217,14 @@ You are a [ROLE_TITLE] with [EXPERIENCE_LEVEL] years of experience in [DOMAIN_EX
 ## Success Metrics
 
 ### Template Effectiveness
+
 - Consistent application of CREATE Framework across team members
 - Improved AI output quality and reduced iteration cycles
 - Enhanced alignment between AI responses and business requirements
 - Successful knowledge transfer and team adoption
 
 ### Organizational Impact
+
 - Standardized approach to AI integration across departments
 - Measurable improvement in AI-assisted productivity and quality
 - Systematic foundation for advanced AI integration initiatives
@@ -222,4 +232,6 @@ You are a [ROLE_TITLE] with [EXPERIENCE_LEVEL] years of experience in [DOMAIN_EX
 
 ---
 
-*This basic CREATE template provides the foundational pattern for systematic AI integration, ensuring consistent quality while supporting organizational customization and scaling requirements.*
+*This basic CREATE template provides the foundational pattern for systematic AI integration,
+ensuring consistent quality while supporting organizational customization and scaling
+requirements.*

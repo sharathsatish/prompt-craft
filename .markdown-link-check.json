@@ -1,0 +1,25 @@
+{
+  "ignorePatterns": [
+    {
+      "pattern": "^http://localhost"
+    },
+    {
+      "pattern": "^https://localhost"
+    },
+    {
+      "pattern": "^file://"
+    }
+  ],
+  "timeout": "20s",
+  "retryOn429": true,
+  "retryCount": 3,
+  "fallbackHTTPStatus": [400, 401, 403, 404, 500, 502, 503, 504],
+  "aliveStatusCodes": [200, 206],
+  "ignoreHttpsErrors": false,
+  "replacementPatterns": [
+    {
+      "pattern": "^/",
+      "replacement": "https://github.com/your-org/prompt-craft/blob/main/"
+    }
+  ]
+}
