@@ -84,6 +84,18 @@ The CREATE Framework works through systematic application of all six elements:
 
 [📖 Framework Integration Guide](framework-integration.md) - Combining CREATE elements systematically
 
+#### Platform-Specific Integration Guides
+
+The CREATE Framework includes specialized integration guides for major LLM platforms:
+
+- **[GitHub Copilot Integration](llm-integrations/github-copilot-integration.md)** - Development workflow optimization
+- **[ChatGPT Integration](llm-integrations/chatgpt-integration.md)** - Custom Instructions and conversation management  
+- **[Claude Projects Integration](llm-integrations/claude-projects-integration.md)** - Project context and knowledge bases
+- **[Google Gemini Integration](llm-integrations/gemini-integration.md)** - Multimodal analysis and large context windows
+- **[Microsoft 365 Copilot Integration](llm-integrations/m365-copilot-integration.md)** - Cross-application productivity enhancement
+
+*Each guide provides platform-specific techniques while maintaining CREATE Framework consistency.*
+
 ### Quality Pyramid Integration
 
 Each CREATE element supports Quality Pyramid principles:
