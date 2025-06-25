@@ -43,14 +43,13 @@ function validateRepositoryStructure() {
   
   const expectedDirs = [
     'methodology',
-    'workflows', 
-    'templates',
-    'education',
-    'reference',
-    'tools'
+    'prompts', 
+    'guides',
+    'examples',
+    'learning-resources'
   ];
   
-  const keyFiles = ['README.md', 'METHODOLOGY.md', 'CONTRIBUTING.md'];
+  const keyFiles = ['README.md', 'CONTRIBUTING.md'];
   
   let structureValid = true;
   
