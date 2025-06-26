@@ -183,12 +183,10 @@ When approaching any prompt engineering task:
 ### Core Components
 
 - **`methodology/`**: Complete framework documentation and systematic principles
-- **`workflows/`**: Practical applications scaling from individual to organizational use
-- **`templates/`**: Production-ready patterns for all user scales
-- **`education/`**: Structured learning pathways and systematic training materials
-- **`reference/`**: Quick access guides and systematic methodology reminders
-- **`tools/`**: Implementation support and systematic adoption resources
-- **`research/`**: Evidence-based improvements and validation studies
+- **`prompts/`**: Ready-to-use prompt patterns demonstrating CREATE Framework
+- **`guides/`**: Implementation guidance and quick reference materials
+- **`examples/`**: Real-world applications scaling from individual to organizational use
+- **`learning-resources/`**: Structured learning pathways and systematic training materials
 
 ### Content Development Standards
 

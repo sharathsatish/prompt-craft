@@ -1,9 +1,9 @@
-# Prompt-Craft NPM Package Setup
+# Prompt-Craft Development Guide
 
 ## Overview
 
-This repository now includes a complete npm package configuration to support Continuous
-Integration (CI) and systematic validation of the CREATE Framework and Quality Pyramid
+This repository includes a complete development environment setup with npm package configuration,
+automated validation, and Continuous Integration (CI) support for the CREATE Framework and Quality Pyramid
 methodology.
 
 ## Package Components
@@ -15,9 +15,9 @@ methodology.
 - `.npmrc` - NPM configuration for strict dependency management
 - `.markdown-link-check.json` - Configuration for link validation
 
-### 🛠 Scripts Directory
+### 🛠 GitHub Scripts
 
-- `scripts/validate.js` - Comprehensive validation script for CI
+- `.github/scripts/validate.js` - Comprehensive validation script for CI and local development
 
 ### 🧪 Available NPM Scripts
 
@@ -65,11 +65,10 @@ npm run ci
 Validates presence of required directories:
 
 - `methodology/` - Framework documentation
-- `workflows/` - Practical application workflows  
-- `templates/` - Reusable CREATE Framework templates
-- `education/` - Learning pathways and training materials
-- `reference/` - Quick access guides
-- `tools/` - Implementation support tools
+- `prompts/` - Ready-to-use CREATE Framework patterns
+- `guides/` - Implementation guidance and quick reference materials  
+- `examples/` - Real-world application workflows
+- `learning-resources/` - Learning pathways and training materials
 
 ### 🎯 CREATE Framework Compliance
 

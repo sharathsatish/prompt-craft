@@ -65,29 +65,30 @@ Foundation-up quality assurance ensuring:
 
 ## Repository Navigation
 
-### 📖 **New to the Methodology?**
+### 🚀 **New to Prompt Engineering?**
 
-Start with [METHODOLOGY.md](METHODOLOGY.md) for comprehensive framework understanding, then
-explore [Methodology](methodology/README.md) for hands-on application.
+**Start Here:** [Learning Resources](learning-resources/README.md) - Complete step-by-step path from beginner to expert  
+with 8-week structured progression, navigation help, and practical exercises.
 
-### 🔧 **Ready for Practical Applications?**
+### 📖 **Understand the Methodology**
 
-Jump to [Workflows](workflows/README.md) for production-ready prompt patterns and systematic
-development approaches that work for individuals, teams, and organizations.
+Read [Methodology](methodology/README.md) for comprehensive framework understanding, then  
+explore detailed guides and implementation resources.
 
-### 📚 **Want Structured Learning?**
+### 🎯 **Ready for Production Prompts?**
 
-Visit [Education](education/README.md) for learning pathways that scale from individual skill
-building to team training to organizational capability development.
+Browse [Prompts](prompts/README.md) for user-focused patterns organized by use case and role,
+demonstrating CREATE Framework and Quality Pyramid methodology through practical application.
 
-### ⚡ **Want Quick Reference?**
+### 📚 **Need Implementation Guidance?**
 
-Check [Reference](reference/README.md) for rapid access to CREATE Framework guidance and
-Quality Pyramid checklists.
+Check [Guides](guides/README.md) for step-by-step processes, quick reference materials,  
+and systematic adoption strategies.
 
-### 🛠️ **Looking for Implementation Tools?**
+### � **Want Real-World Examples?**
 
-Explore [Tools](tools/README.md) for systematic methodology implementation and adoption support.
+Explore [Examples](examples/README.md) for use cases, industry applications, and success  
+stories across individual, team, and organizational scales.
 
 ## Value Proposition
 
@@ -123,20 +124,20 @@ Explore [Tools](tools/README.md) for systematic methodology implementation and a
 
 ### Individual Learning Path (Weeks 1-2)
 
-1. Review [METHODOLOGY.md](METHODOLOGY.md) for framework understanding
-2. Complete [CREATE Framework Mastery](education/systematic-onboarding/create-framework-mastery/) training
-3. Practice with [Templates](templates/README.md) and [Workflows](workflows/README.md)
+1. Review [Methodology](methodology/README.md) for framework understanding
+2. Complete [Learning Guide](LEARNING-GUIDE.md) structured progression
+3. Practice with [Prompts](prompts/README.md) and [Examples](examples/README.md)
 
 ### Team Adoption Path (Weeks 3-4)
 
-1. Apply methodology to existing processes using [Workflows](workflows/README.md)
+1. Apply methodology to existing processes using [Guides](guides/README.md)
 2. Implement [Quality Pyramid](methodology/quality-pyramid/README.md) principles
 3. Establish shared practices and quality standards
 
 ### Organizational Implementation Path (Weeks 5-8+)
 
-1. Use [Education](education/README.md) for systematic team training
-2. Implement [Tools](tools/README.md) for organizational adoption
+1. Use [Learning Resources](learning-resources/README.md) for systematic team training
+2. Scale methodologies using [Examples](examples/README.md) and [Guides](guides/README.md)
 3. Establish governance, quality assurance, and scaling processes
 
 ## Contributing to Prompt Engineering Methodology
@@ -155,12 +156,15 @@ and improvements that enhance systematic prompt engineering methodology.
 
 ## Core Methodology Links
 
-- [METHODOLOGY.md](METHODOLOGY.md) - Complete framework documentation
+- [Methodology](methodology/README.md) - Complete framework documentation and implementation guidance
 - [CREATE Framework](methodology/create-framework/README.md) - Systematic prompt construction
 - [Quality Pyramid](methodology/quality-pyramid/README.md) - Foundation-up quality assurance
 - [Systematic Development](methodology/systematic-development/README.md) - Implementation methodology
-- [Templates](templates/README.md) - Production-ready patterns for all scales
-- [Workflows](workflows/README.md) - Practical applications from individual to organizational use
+- [Prompts](prompts/README.md) - User-focused patterns organized by use case and role
+- [Guides](guides/README.md) - Implementation guidance from individual to organizational scaling  
+- [Examples](examples/README.md) - Real-world applications and success stories
+- [Learning Resources](learning-resources/README.md) - Structured learning pathways for skill development
+- [Development Guide](DEVELOPMENT.md) - Setup, validation, and CI/CD for contributors
 
 ---
 
