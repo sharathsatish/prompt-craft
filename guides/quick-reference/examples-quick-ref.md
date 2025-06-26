@@ -97,6 +97,7 @@ All team members in departments A, B, and C
 - Actionable next steps
 - Scannable format
 
+```text
 ```
 
 ### Input/Output Examples
@@ -138,6 +139,7 @@ Jane Smith,Marketing,65000
 3. Calculate averages
 4. Format for readability
 
+```text
 ```
 
 ### Error/Correction Examples
@@ -171,14 +173,15 @@ Jane Smith,Marketing,65000
 **Context:** REST endpoint documentation
 
 **Before (Inadequate):**
-```
 
+```text
 GET /users
 Returns users
-
 ```
 
 **After (Complete):**
+
+```text
 ```
 
 ### GET /users
@@ -209,9 +212,19 @@ Retrieve a paginated list of all users in the system.
 - 401: Authentication required
 - 429: Rate limit exceeded
 
+```text
 ```
 
 **Why This Works:**
+
+- Complete parameter documentation
+- Real example response
+- Error handling coverage
+- Consistent formatting
+
+```text
+**Why This Works:**
+
 - Complete parameter documentation
 - Real example response
 - Error handling coverage
@@ -268,9 +281,10 @@ we faced, and whether it's right for your team."
 - Waiting on API keys from external vendor (escalated to procurement)
 - Need UI/UX review for checkout flow by Friday
 
-```
-
+```text
+```text
 **Teaching Points:**
+
 - Specific achievements with context
 - Clear priorities for upcoming work
 - Proactive communication about obstacles

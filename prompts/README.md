@@ -4,7 +4,9 @@
 
 ## Overview
 
-The Prompts directory contains immediately usable prompt patterns organized around practical applications and user roles. Each prompt demonstrates systematic application of CREATE Framework and Quality Pyramid principles while solving real-world challenges.
+The Prompts directory contains immediately usable prompt patterns organized around practical applications and user
+roles. Each prompt demonstrates systematic application of CREATE Framework and Quality Pyramid principles while
+solving real-world challenges.
 
 ## Organization by Use Case
 
