@@ -21,7 +21,8 @@ This prompt provides a systematic methodology for product managers and teams to 
 - **Implementation-Ready Format**: Structure that supports a step-by-step implementation process
 - **Quality Standards**: Built-in validation checklist and quality gates
 
-**Usage Instructions**:
+**Usage Instructions:**
+
 1. **Copy the template** from your team's documentation or use the example in `snippets/prd-template.md`
 2. **Follow this prompt** to systematically fill out each section
 3. **Use the template's validation checklist** to ensure completeness
@@ -34,7 +35,8 @@ The template provides the structure; this prompt provides the methodology for fi
 ### Step 1: Research and Foundation
 
 **Prompt Template:**
-```
+
+```markdown
 I need to draft a new PRD for [FEATURE_NAME] in our product.
 
 Before I start writing, please help me research and understand:
@@ -67,7 +69,8 @@ Please provide a summary of findings and recommendations for structuring this PR
 ### Step 2: Define Feature Scope and Value
 
 **Prompt Template:**
-```
+
+```markdown
 Based on the research, let's define the scope and value proposition for [FEATURE_NAME].
 
 Please help me draft:
@@ -104,7 +107,8 @@ Use existing PRD patterns:
 ### Step 3: Define Functional Requirements
 
 **Prompt Template:**
-```
+
+```markdown
 Now let's define the detailed functional requirements for [FEATURE_NAME].
 
 Please help me create:
@@ -115,17 +119,16 @@ Please help me create:
    - Use High/Medium priority classification
 
 2. **Requirement Format** (for each FR):
-   ```
+
    ### FR-X: [Requirement Name]
    **Priority**: High/Medium
    **Description**: Clear description of what this requirement accomplishes
-   
+
    #### Acceptance Criteria
    - [ ] Specific, testable criteria
    - [ ] Measurable outcomes
    - [ ] Edge cases covered
    - [ ] Error handling requirements
-   ```
 
 3. **Success Criteria**:
    - Performance targets (if applicable)
@@ -150,7 +153,8 @@ Follow existing patterns:
 ### Step 4: Define Technical Architecture
 
 **Prompt Template:**
-```
+
+```markdown
 Let's define the technical architecture and implementation approach for [FEATURE_NAME].
 
 Please help me outline:
@@ -191,7 +195,8 @@ Base this on patterns from the existing codebase:
 ### Step 5: Define User Experience
 
 **Prompt Template:**
-```
+
+```markdown
 Now let's define the user experience and interface for [FEATURE_NAME].
 
 Please help me specify:
@@ -232,7 +237,8 @@ Follow existing patterns:
 ### Step 6: Define Testing and Quality Assurance
 
 **Prompt Template:**
-```
+
+```markdown
 Let's define the testing strategy and quality requirements for [FEATURE_NAME].
 
 Please help me specify:
@@ -262,6 +268,7 @@ Please help me specify:
    - Code quality metrics
 
 Use existing testing patterns:
+
 - Follow your team's testing conventions
 - Include mock strategies for external dependencies
 - Define specific performance targets where applicable
@@ -273,7 +280,8 @@ Use existing testing patterns:
 ### Step 7: Finalize PRD Structure
 
 **Prompt Template:**
-```
+
+```markdown
 Now let's finalize the complete PRD document for [FEATURE_NAME].
 
 Using your team's PRD template as your base structure, please create the final PRD:
@@ -281,6 +289,7 @@ Using your team's PRD template as your base structure, please create the final P
 1. **Start with Template**: Copy the PRD template from your documentation or repository
 
 2. **Fill Required Sections**: Use the content you've developed in previous steps to populate:
+
    - Executive Summary (from Step 2)
    - Independent Value Proposition (from Step 2)
    - Problem Statement (from Step 2)
@@ -294,6 +303,7 @@ Using your team's PRD template as your base structure, please create the final P
    - Future Enhancements (brief, out-of-scope items)
 
 3. **Complete YAML Frontmatter**:
+
    ```yaml
    ---
    lastUpdated: "[CURRENT_DATE]"
@@ -366,16 +376,19 @@ Save the final PRD as: [feature-name]-prd.md in your team's documentation or rep
 ## 📖 Reference Examples
 
 ### PRD Template and Structure
+
 - **Standard PRD Template**: Complete template with all required sections and validation checklist
 - **Template Usage Guidelines**: Comprehensive guidance for product managers and implementation teams
 - **Quality Standards**: Built-in completeness, specificity, and implementation support requirements
 
 ### Successful PRD Examples
+
 - **Feature A PRD**: Excellent technical architecture and performance targets
 - **Initial Documentation Scaffold**: Clear scenario-based requirements and user workflows
 - **Feature B PRD**: Good foundation feature with multiple strategies
 
 ### Key Patterns to Follow
+
 - **Independent Value**: Every PRD must provide standalone value
 - **Relationship Mapping**: Clear dependencies and enablement relationships
 - **Technical Integration**: Specific integration points with existing code
@@ -404,6 +417,7 @@ This guide, combined with a standard PRD template, ensures your PRD will be comp
 ## Best Practices: ALWAYS / NEVER
 
 **ALWAYS:**
+
 - Use the standard PRD template as your base.
 - Make every requirement testable and measurable.
 - Clearly define MVP scope and exclude enhancements.
@@ -411,6 +425,7 @@ This guide, combined with a standard PRD template, ensures your PRD will be comp
 - Validate technical feasibility with the current architecture.
 
 **NEVER:**
+
 - Leave sections incomplete or with placeholders.
 - Include vague, untestable, or non-measurable requirements.
 - Overload the PRD with future enhancements.

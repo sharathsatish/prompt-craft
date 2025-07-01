@@ -161,11 +161,11 @@ function validateQualityPyramid() {
     return files;
   };
   
-  const educationDir = 'education';
+  const learningResourcesDir = 'learning-resources';
   let qualityIssues = 0;
   
-  if (fs.existsSync(educationDir)) {
-    const educationalFiles = findEducationalFiles(educationDir);
+  if (fs.existsSync(learningResourcesDir)) {
+    const educationalFiles = findEducationalFiles(learningResourcesDir);
     
     educationalFiles.forEach(file => {
       try {
@@ -186,7 +186,7 @@ function validateQualityPyramid() {
       }
     });
   } else {
-    console.log('   ℹ️  No education directory found');
+    console.log('   ℹ️  No learning-resources directory found');
   }
   
   validationResults.qualityPyramid = qualityIssues === 0;
