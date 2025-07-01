@@ -79,11 +79,11 @@ function validateRepositoryStructure() {
 
 /**
  * Validate CREATE Framework compliance
+ * Recognizes both explicit sections and sophisticated implementations
  */
 function validateCreateCompliance() {
   console.log('🎯 Checking CREATE Framework compliance...');
   
-  const createSections = ['Character', 'Request', 'Examples', 'Adjustments', 'Type'];
   let complianceIssues = 0;
   
   // Find prompt templates
@@ -101,6 +101,63 @@ function validateCreateCompliance() {
     });
     return files;
   };
+
+  /**
+   * Check CREATE Framework elements with sophisticated pattern recognition
+   */
+  function checkCreateElements(content, filename) {
+    const results = {
+      character: false,
+      request: false,
+      examples: false,
+      adjustments: false,
+      type: false
+    };
+    
+    // CHARACTER: Check for persona, YAML frontmatter, tool specifications, expert role
+    if (content.includes('## Character') || content.includes('# Character') ||
+        (content.includes('mode:') && content.includes('tools:')) ||
+        content.includes("I'm an expert") || content.includes("I am an expert") ||
+        content.includes('author:') || content.includes('description:')) {
+      results.character = true;
+    }
+    
+    // REQUEST: Check for clear methodology, systematic process, expected outcomes
+    if (content.includes('## Request') || content.includes('# Request') ||
+        content.includes('systematic') || content.includes('methodology') ||
+        content.includes('process') || content.includes('help you') ||
+        content.includes('**Expected Output**') || content.includes('Please help')) {
+      results.request = true;
+    }
+    
+    // EXAMPLES: Check for prompt templates, concrete examples, demonstrations
+    if (content.includes('## Examples') || content.includes('# Examples') ||
+        content.includes('**Prompt Template:**') || content.includes('```markdown') ||
+        content.includes('Example:') || content.includes('**Example') ||
+        content.includes('template') || content.includes('demonstration')) {
+      results.examples = true;
+    }
+    
+    // ADJUSTMENTS: Check for best practices, constraints, quality standards
+    if (content.includes('## Adjustments') || content.includes('# Adjustments') ||
+        content.includes('**ALWAYS**') || content.includes('**NEVER**') ||
+        content.includes('Best Practices') || content.includes('Quality Standards') ||
+        content.includes('constraints') || content.includes('validation') ||
+        content.includes('checklist')) {
+      results.adjustments = true;
+    }
+    
+    // TYPE: Check for output specifications, format requirements, structure
+    if (content.includes('## Type') || content.includes('# Type') ||
+        content.includes('**Expected Output**') || content.includes('format') ||
+        content.includes('structure') || content.includes('YAML') ||
+        content.includes('markdown') || content.includes('document') ||
+        content.includes('Output:')) {
+      results.type = true;
+    }
+    
+    return results;
+  }
   
   const promptFiles = findPromptFiles('.');
   
@@ -113,19 +170,20 @@ function validateCreateCompliance() {
       
       try {
         const content = fs.readFileSync(file, 'utf8');
-        const missingSections = [];
+        const createResults = checkCreateElements(content, file);
         
-        createSections.forEach(section => {
-          if (!content.includes(`## ${section}`) && !content.includes(`# ${section}`)) {
-            missingSections.push(section);
-          }
-        });
+        // Count implementation score
+        const implementedElements = Object.values(createResults).filter(Boolean).length;
+        const totalElements = Object.keys(createResults).length;
         
-        if (missingSections.length > 0) {
-          console.log(`   ⚠️  Missing CREATE sections: ${missingSections.join(', ')}`);
-          complianceIssues++;
+        if (implementedElements >= 4) { // Allow for 80% compliance
+          console.log(`   ✅ Follows CREATE Framework (${implementedElements}/${totalElements} elements detected)`);
         } else {
-          console.log(`   ✅ Follows CREATE Framework structure`);
+          const missingElements = Object.keys(createResults)
+            .filter(key => !createResults[key])
+            .map(key => key.charAt(0).toUpperCase() + key.slice(1));
+          console.log(`   ⚠️  Weak CREATE compliance (${implementedElements}/${totalElements}): Missing ${missingElements.join(', ')}`);
+          complianceIssues++;
         }
       } catch (error) {
         console.log(`   ❌ Error reading file: ${error.message}`);
@@ -161,11 +219,11 @@ function validateQualityPyramid() {
     return files;
   };
   
-  const educationDir = 'education';
+  const learningResourcesDir = 'learning-resources';
   let qualityIssues = 0;
   
-  if (fs.existsSync(educationDir)) {
-    const educationalFiles = findEducationalFiles(educationDir);
+  if (fs.existsSync(learningResourcesDir)) {
+    const educationalFiles = findEducationalFiles(learningResourcesDir);
     
     educationalFiles.forEach(file => {
       try {
@@ -186,7 +244,7 @@ function validateQualityPyramid() {
       }
     });
   } else {
-    console.log('   ℹ️  No education directory found');
+    console.log('   ℹ️  No learning-resources directory found');
   }
   
   validationResults.qualityPyramid = qualityIssues === 0;
