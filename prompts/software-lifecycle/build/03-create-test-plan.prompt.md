@@ -8,29 +8,35 @@ description: 'Systematic prompt for creating comprehensive test plans from imple
 
 # Create Test Plan for Implementation Prompt
 
-I'm an expert test planner who will help you systematically create comprehensive test plans from implementation plans for any product or platform. This prompt follows proven, repeatable steps to ensure clarity, coverage, and production-readiness.
+I'm an expert test planner who will help you systematically create comprehensive test plans from implementation
+plans for any product or platform. This prompt follows proven, repeatable steps to ensure clarity, coverage, and
+production-readiness.
 
 **Tip:** Use the sample PRD template in `snippets/prd-template.md` as a reference for requirements and structure.
 
 ## Essential Test Planning Steps
 
 ### 1. Pre-Planning Checklist
+
 - [ ] Implementation plan is complete and clear
 - [ ] Familiarity with current codebase and test coverage
 - [ ] Testing environment is set up
 
 ### 2. Analyze Implementation Plan
+
 - Read the implementation plan thoroughly
 - Identify all features and components to be tested
 - Review existing test files and coverage
 - Note any specific requirements or constraints
 
 ### 3. Define Test Plan Structure
+
 - Create a test plan document with clear metadata and required sections
 - Include executive summary, feature overview, test strategy, detailed test plan, and success metrics
 - Use tables and diagrams where helpful
 
 ### 4. Systematic Test Planning
+
 - For each feature/component:
   - Define unit, integration, and end-to-end tests
   - Specify test cases, coverage targets, and priorities
@@ -38,12 +44,14 @@ I'm an expert test planner who will help you systematically create comprehensive
   - Plan for automation and CI integration
 
 ### 5. Quality Assurance and Validation
+
 - Ensure test plan covers all implementation plan requirements
 - Validate accuracy of current test status
 - Provide actionable roadmap and next steps
 - Include risk mitigation and maintenance guidance
 
 ### 6. Finalization and Handoff
+
 - Save the test plan in the appropriate location
 - Communicate completion and next steps to team
 
@@ -51,7 +59,8 @@ I'm an expert test planner who will help you systematically create comprehensive
 
 ## Objective
 
-Generate a comprehensive test plan document for any feature implementation plan that serves as both test coverage documentation and living feature capabilities documentation.
+Generate a comprehensive test plan document for any feature implementation plan that serves as both test coverage
+documentation and living feature capabilities documentation.
 
 ## Prerequisites
 
@@ -124,7 +133,7 @@ testLevels: ["unit", "integration", "end-to-end", "cross-platform"]
    - Quality gates and acceptance criteria
 
 4. **Detailed Test Plan**
-   
+
    **Unit Tests (Target: 80-100 tests)**
    - Break down by major components/classes from implementation plan
    - For each component:
@@ -136,13 +145,13 @@ testLevels: ["unit", "integration", "end-to-end", "cross-platform"]
        - Test descriptions
        - Current implementation status
        - Priority level
-   
+
    **Integration Tests (Target: 20-30 tests)**
    - CLI command integration
    - Component interaction workflows
    - Cross-platform compatibility
    - End-to-end workflows
-   
+
    **End-to-End Tests (Target: 5-10 tests)**
    - Complete user scenarios
    - Error recovery flows
@@ -194,7 +203,7 @@ Accurately mark test implementation status by:
 Create a phased approach:
 
 - **Phase 1 (P0)**: Critical foundation tests (2 weeks)
-- **Phase 2 (P1)**: User experience and integration tests (1 week)  
+- **Phase 2 (P1)**: User experience and integration tests (1 week)
 - **Phase 3 (P2)**: Polish and edge case tests (1 week)
 
 ### 6. Visual Documentation
@@ -244,7 +253,6 @@ Provide ready-to-use PowerShell commands for:
 ```
 
 Create the comprehensive test plan now, ensuring it captures all implementation plan requirements and provides accurate current status assessment.
-```
 
 ## Usage Instructions
 
@@ -332,12 +340,14 @@ This prompt should be updated when:
 ## Best Practices: ALWAYS / NEVER
 
 **ALWAYS:**
+
 - Cover every requirement and component from the implementation plan.
 - Specify clear, actionable, and prioritized test cases.
 - Include both positive and negative scenarios.
 - Validate current test coverage before planning new tests.
 
 **NEVER:**
+
 - Assume coverage without checking actual test files.
 - Leave test cases without status or priority.
 - Ignore edge cases or error handling.

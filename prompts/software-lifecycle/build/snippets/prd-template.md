@@ -7,7 +7,8 @@ lastUpdated: "[YYYY-MM-DD]"
 
 # 🤖 Feature/Product PRD Template
 
-This template provides a proven structure for writing Product Requirements Documents (PRDs) for features or products. Use this template to ensure consistency, completeness, and clear implementation guidance for any initiative.
+This template provides a proven structure for writing Product Requirements Documents (PRDs) for features or products.
+Use this template to ensure consistency, completeness, and clear implementation guidance for any initiative.
 
 ## 📋 PRD Template Structure
 
@@ -201,7 +202,7 @@ flowchart TD
     B --> D[[SupportingComponent]]
     C --> E[External API]
     D --> F[File System]
-    
+
     style A fill:#fff3e0
     style B fill:#e3f2fd
     style C fill:#f1f8e9
@@ -411,11 +412,13 @@ product-tool [new-command] [arguments]
 [List potential future improvements that are out of scope for this PRD:]
 
 ### Phase 2 Enhancements
+
 - **[Enhancement 1]**: [Brief description of future capability]
 - **[Enhancement 2]**: [Another future improvement]
 - **[Enhancement 3]**: [Additional enhancement possibility]
 
 ### Advanced Features
+
 - **[Advanced Feature]**: [Description of sophisticated capability]
 - **[Integration Feature]**: [Future integration possibility]
 - **[Automation Feature]**: [Advanced automation capability]
@@ -441,8 +444,10 @@ Before finalizing this PRD, ensure:
 
 ---
 
-*This PRD template is designed for features or products. It ensures consistency with best practices while providing comprehensive guidance for implementation planning.*
-```
+*This PRD template is designed for features or products. It ensures consistency with best practices while
+providing comprehensive guidance for implementation planning.*
+
+```markdown
 
 ## 🎯 Template Usage Guidelines
 

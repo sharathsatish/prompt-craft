@@ -8,13 +8,17 @@ description: 'Systematic prompt for product managers to draft comprehensive Prod
 
 # 📋 Comprehensive PRD Writing Prompt
 
-This prompt provides a systematic methodology for product managers and teams to draft comprehensive Product Requirements Documents (PRDs) for any product or feature. It follows established patterns from successful PRDs and ensures consistency, completeness, and implementability across projects and organizations.
+This prompt provides a systematic methodology for product managers and teams to draft comprehensive Product Requirements
+Documents (PRDs) for any product or feature. It follows established patterns from successful PRDs and ensures consistency,
+completeness, and implementability across projects and organizations.
 
-**Tip:** A sample PRD template is available in the `snippets/prd-template.md` file. Use this as a starting point or reference for your own PRDs.
+**Tip:** A sample PRD template is available in the `snippets/prd-template.md` file. Use this as a starting point or
+reference for your own PRDs.
 
 ## 📝 PRD Template
 
-**Before starting**, familiarize yourself with your team's PRD template, use the provided example in `snippets/prd-template.md`, or use a standard structure that includes:
+**Before starting**, familiarize yourself with your team's PRD template, use the provided example in
+`snippets/prd-template.md`, or use a standard structure that includes:
 
 - **Complete PRD Structure**: Pre-defined sections for all key aspects of a product or feature
 - **Guidance for AI or Technical Features**: Sections for model integration, prompt engineering, or technical context if relevant
@@ -315,14 +319,14 @@ Using your team's PRD template as your base structure, please create the final P
    ---
    ```
 
-4. **Enhancements for Technical or AI Features**: Ensure all technical or AI-related sections from the template are completed if relevant
+1. **Enhancements for Technical or AI Features**: Ensure all technical or AI-related sections from the template are completed if relevant
 
-5. **Cross-References**:
+2. **Cross-References**:
    - Link to related PRDs or documentation appropriately
    - Reference implementation sequence documentation
    - Include proper markdown link formatting
 
-6. **Template Validation**: Use the PRD Validation Checklist from the template:
+3. **Template Validation**: Use the PRD Validation Checklist from the template:
    - Ensure all template sections are complete
    - Verify technical feasibility aligns with your architecture
    - Confirm scope is appropriate for a single PRD
@@ -330,7 +334,8 @@ Using your team's PRD template as your base structure, please create the final P
    - Validate technical or AI-specific requirements are comprehensive if applicable
 
 Save the final PRD as: [feature-name]-prd.md in your team's documentation or repository
-```
+
+```markdown
 
 **Expected Output**: Complete, publication-ready PRD document
 
@@ -412,7 +417,8 @@ A completed PRD should have:
 - [ ] **Future enhancements** identified but not included in current scope
 - [ ] **Template validation** completed using the built-in checklist
 
-This guide, combined with a standard PRD template, ensures your PRD will be comprehensive, implementable, and aligned with best practices for product development.
+This guide, combined with a standard PRD template, ensures your PRD will be comprehensive, implementable, and
+aligned with best practices for product development.
 
 ## Best Practices: ALWAYS / NEVER
 
